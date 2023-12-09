@@ -30,6 +30,8 @@
           <th (click)="doOrder('role')">Role</th>
           <th>Threads</th>
           <th>Replies</th>
+          <th (click)="doOrder('latitude')">Latitude</th>
+          <th (click)="doOrder('longitude')">Longitude</th>
           <th>Tools</th>
         </tr>
       </thead>
@@ -53,6 +55,8 @@
             <a [routerLink]="['/admin','reply','plist','byuser',u.id]" *ngIf="u.replies>0">{{u.replies}}</a>
             <span *ngIf="u.replies==0">0</span>
           </td>
+          <td>{{u.latitude}}</td>
+          <td>{{u.longitude}}</td>
           <td class="text-center">
             <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
               <button class="btn btn-primary" [routerLink]="['/admin','user','view',u.id]"><i

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { UserAjaxService } from 'src/app/service/user.ajax.service.service';
 
 @Component({
   selector: 'app-mapa-routed',
@@ -9,6 +10,8 @@ import * as L from 'leaflet';
 export class MapaRoutedComponent implements OnInit {
   map: L.Map | undefined;
   marker: L.Marker | undefined;
+
+  constructor(private userService: UserAjaxService) { }
 
   ngOnInit() {
     this.initMap();
@@ -46,4 +49,26 @@ export class MapaRoutedComponent implements OnInit {
     // Crea un nuevo marcador con el icono personalizado en la ubicación del clic
     this.marker = L.marker(latlng, { icon: customIcon }).addTo(this.map as L.Map);
   }
+
+ //Botón de guardar coordenadas
+// En el componente MapaRoutedComponent
+guardarCoordenadas() {
+  if (this.marker) {
+    const latlng = this.marker.getLatLng();
+    const userId = 1; // Reemplaza con la lógica para obtener el ID del usuario actual
+
+    // Llama al servicio para actualizar las coordenadas en el backend
+    this.userService.updateUserCoordinates(userId, latlng.lat, latlng.lng)
+      .subscribe(
+        () => {
+          console.log('Coordenadas guardadas exitosamente');
+        },
+        (error) => {
+          console.error('Error al guardar coordenadas', error);
+        }
+      );
+  }
+}
+
+
 }
