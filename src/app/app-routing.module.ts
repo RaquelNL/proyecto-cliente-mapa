@@ -19,6 +19,7 @@ import { AdminThreadViewRoutedComponent } from './components/thread/admin-thread
 import { AdminReplyViewRoutedComponent } from './components/reply/admin-reply-view-routed/admin-reply-view-routed.component';
 import { LoginRoutedComponent } from './components/shared/login-routed/login-routed.component';
 import { LogoutRoutedComponent } from './components/shared/logout-routed/logout-routed.component';
+import { MapaRoutedComponent } from './components/shared/mapa-routed/mapa-routed.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'home', component: HomeRoutedComponent },
   { path: 'login', component: LoginRoutedComponent },
   { path: 'logout', component: LogoutRoutedComponent },
+  { path: 'mapa', component: MapaRoutedComponent },
   //--
   { path: 'admin/user/plist', component: AdminUserPlistRoutedComponent },
   { path: 'admin/user/view/:id', component: AdminUserViewRoutedComponent },    

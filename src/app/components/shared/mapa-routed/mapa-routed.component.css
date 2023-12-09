@@ -1,0 +1,6 @@
+@import '~leaflet/dist/leaflet.css';
+#map {
+    height: 100%; /* Ajusta la altura según tus preferencias */
+    min-height: 400px; /* Altura mínima para evitar problemas con el contenedor */
+  }
+  
