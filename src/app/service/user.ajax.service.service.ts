@@ -58,10 +58,10 @@ export class UserAjaxService {
     }
 
    // En el servicio UserAjaxService
-    updateUserCoordinates(userId: number, latitude: number, longitude: number): Observable<any> {
-        const coordinates = { latitude: latitude, longitude: longitude };
-        return this.oHttpClient.put<any>(this.sUrl + `/${userId}/coordinates`, coordinates, { headers: {'Content-Type': 'application/json'} });
-    }
-  
+   updateUserCoordinates(userId: number, latitude: number, longitude: number): Observable<any> {
+    const coordinates = { latitude: latitude, longitude: longitude };
+    return this.oHttpClient.put<any>(this.sUrl + `/${userId}/coordinates`, coordinates, { headers: {'Content-Type': 'application/json'} });
+}
+
       
 }
